@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://disa6ytcw8tbw"]
+[gd_scene load_steps=9 format=3 uid="uid://disa6ytcw8tbw"]
 
 [ext_resource type="Texture2D" uid="uid://bcsienmh48ung" path="res://JEJEJEJEJE.png" id="1_i17ep"]
 [ext_resource type="Script" uid="uid://blaajrk5f0mt5" path="res://SCRIPTS/menu.gd" id="1_qnims"]
-[ext_resource type="AudioStream" uid="uid://p33ls5xlw4d" path="res://dark_horse_2.ogg" id="3_vbyvk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnims"]
 bg_color = Color(0.686275, 0, 0.164706, 1)
@@ -84,10 +83,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_46rhb")
 text = "SALIR"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="BATALLA" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vbyvk")
-autoplay = true
+bus = &"MUSIC"
 
 [connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
