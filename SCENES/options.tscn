@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfq550sigxgfx"]
+
+[ext_resource type="Script" uid="uid://emnmm01dl0qd" path="res://SCRIPTS/options.gd" id="1_wmoys"]
+[ext_resource type="Texture2D" uid="uid://bcsienmh48ung" path="res://JEJEJEJEJE.png" id="2_sgvvq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnims"]
+bg_color = Color(0.686275, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbyvk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmoys"]
+bg_color = Color(0.686275, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgvvq"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmoys")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 413.0
+offset_bottom = 360.0
+texture = ExtResource("2_sgvvq")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -150.5
+offset_right = 174.0
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="VOLUME" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnims")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbyvk")
+text = "VOLUMEN"
+
+[node name="RESOLUTION" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wmoys")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sgvvq")
+text = "GRAFICOS"
+
+[node name="BACK" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ATRAS"
+
+[connection signal="pressed" from="VBoxContainer/VOLUME" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/RESOLUTION" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]

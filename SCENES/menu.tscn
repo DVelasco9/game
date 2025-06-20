@@ -1,4 +1,26 @@
-[gd_scene format=3 uid="uid://disa6ytcw8tbw"]
+[gd_scene load_steps=10 format=3 uid="uid://disa6ytcw8tbw"]
+
+[ext_resource type="Texture2D" uid="uid://bcsienmh48ung" path="res://JEJEJEJEJE.png" id="1_i17ep"]
+[ext_resource type="Script" uid="uid://blaajrk5f0mt5" path="res://SCRIPTS/menu.gd" id="1_qnims"]
+[ext_resource type="AudioStream" uid="uid://p33ls5xlw4d" path="res://dark_horse_2.ogg" id="3_vbyvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnims"]
+bg_color = Color(0.686275, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbyvk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mawtk"]
+bg_color = Color(0.686275, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bv5n"]
+bg_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4phj2"]
+bg_color = Color(0.686275, 0, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46rhb"]
+bg_color = Color(0.00566115, 0.00566115, 0.00566114, 1)
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -7,6 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qnims")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -15,15 +38,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 413.0
+offset_bottom = 360.0
+texture = ExtResource("1_i17ep")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,10 +54,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -71.5
-offset_right = 44.5
-offset_bottom = 71.5
+offset_left = -152.5
+offset_top = -128.5
+offset_right = 152.5
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -43,14 +65,30 @@ theme_override_constants/separation = 25
 [node name="PLAY" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qnims")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vbyvk")
 text = "JUGAR"
 
 [node name="OPTIONS" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mawtk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5bv5n")
 text = "OPCIONES"
 
 [node name="QUIT" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4phj2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_46rhb")
 text = "SALIR"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BATALLA" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vbyvk")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
