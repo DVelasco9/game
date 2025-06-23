@@ -1,7 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://dyyefbhs15fso"]
+[gd_scene load_steps=51 format=3 uid="uid://dyyefbhs15fso"]
 
 [ext_resource type="Script" uid="uid://cja2ua3ccgnnp" path="res://SCRIPTS/character_body_2d.gd" id="1_ocxlp"]
-[ext_resource type="PackedScene" uid="uid://cc02o4rcplx48" path="res://SCENES/blood_arrow.tscn" id="2_emqsm"]
 [ext_resource type="Texture2D" uid="uid://b43bab0t3r500" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Idle.png" id="2_errjh"]
 [ext_resource type="Texture2D" uid="uid://buil432df2pf8" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_1.png" id="2_o2hvu"]
 [ext_resource type="Texture2D" uid="uid://bl037x83xjefo" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_3.png" id="2_r0c14"]
@@ -337,7 +336,6 @@ script = ExtResource("1_ocxlp")
 move_speed = 300.0
 jump = 400.0
 run_speed = 2.0
-blood1 = ExtResource("2_emqsm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_ff082")
@@ -349,3 +347,6 @@ shape = SubResource("RectangleShape2D_88mih")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
+
+[node name="spawnarrow" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(17, 17)
