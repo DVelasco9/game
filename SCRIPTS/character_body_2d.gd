@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var move_speed: float
 @export var jump: float
 @export var run_speed: float
+@export var blood1: PackedScene
 
 @onready var animated_sprite = $Sprite2D
 

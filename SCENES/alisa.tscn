@@ -1,12 +1,43 @@
-[gd_scene load_steps=42 format=3 uid="uid://dyyefbhs15fso"]
+[gd_scene load_steps=52 format=3 uid="uid://dyyefbhs15fso"]
 
 [ext_resource type="Script" uid="uid://cja2ua3ccgnnp" path="res://SCRIPTS/character_body_2d.gd" id="1_ocxlp"]
+[ext_resource type="PackedScene" uid="uid://cc02o4rcplx48" path="res://SCENES/blood_arrow.tscn" id="2_emqsm"]
 [ext_resource type="Texture2D" uid="uid://b43bab0t3r500" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Idle.png" id="2_errjh"]
 [ext_resource type="Texture2D" uid="uid://buil432df2pf8" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_1.png" id="2_o2hvu"]
+[ext_resource type="Texture2D" uid="uid://bl037x83xjefo" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_3.png" id="2_r0c14"]
+[ext_resource type="Texture2D" uid="uid://t1cw660x5w0i" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_4.png" id="3_emqsm"]
 [ext_resource type="Texture2D" uid="uid://sm4w1y1a203d" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Jump.png" id="3_euuwh"]
 [ext_resource type="Texture2D" uid="uid://dxbwu8elmgxdi" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_2.png" id="3_xll1k"]
 [ext_resource type="Texture2D" uid="uid://b8al5tq3aq508" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Run.png" id="4_3m7tf"]
 [ext_resource type="Texture2D" uid="uid://oojst4wadvix" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Walk.png" id="5_o2hvu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7avvb"]
+atlas = ExtResource("2_r0c14")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpiw6"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o84ua"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir3p6"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26b4y"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee6gi"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd1oj"]
+atlas = ExtResource("3_emqsm")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ff082"]
 atlas = ExtResource("2_o2hvu")
@@ -138,13 +169,34 @@ region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ff082"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7avvb")
+}],
+"loop": false,
 "name": &"atk3",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpiw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o84ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir3p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26b4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee6gi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd1oj")
+}],
+"loop": false,
 "name": &"atk4",
 "speed": 5.0
 }, {
@@ -183,26 +235,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_2",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"blood1",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"blood2",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"blood3",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"blood4",
 "speed": 5.0
 }, {
 "frames": [{
@@ -305,10 +337,11 @@ script = ExtResource("1_ocxlp")
 move_speed = 300.0
 jump = 400.0
 run_speed = 2.0
+blood1 = ExtResource("2_emqsm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_ff082")
-animation = &"blood4"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2.25, 27)

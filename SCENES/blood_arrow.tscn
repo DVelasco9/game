@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc02o4rcplx48"]
+
+[ext_resource type="Texture2D" uid="uid://cpi1na7h50p2l" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Blood_Charge_1.png" id="1_k2ggb"]
+[ext_resource type="Script" uid="uid://ck3t5yfxw4si4" path="res://SCRIPTS/blood_arrow.gd" id="1_pg0mo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg0mo"]
+atlas = ExtResource("1_k2ggb")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyg6c"]
+atlas = ExtResource("1_k2ggb")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_066f0"]
+atlas = ExtResource("1_k2ggb")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cb4mc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg0mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyg6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_066f0")
+}],
+"loop": true,
+"name": &"blood1",
+"speed": 5.0
+}]
+
+[node name="blood_arrow" type="CharacterBody2D"]
+script = ExtResource("1_pg0mo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cb4mc")
+animation = &"blood1"
+autoplay = "blood1"
+frame_progress = 0.694916
+
+[node name="Timereliminar_flecha" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timereliminar_flecha" to="." method="_on_timereliminar_flecha_timeout"]
