@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $Sprite2D
 
-var blood1 = preload("res://SCENES/blood_arrow.tscn")
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_facing_right = true
 var running = false
@@ -17,9 +17,6 @@ func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
-	look_at(get_angle_to())
-	if Input.is_action_just_pressed("ataque1"):
-		shoot()
 	attack_1()
 	estado()
 	ajump(delta)
@@ -53,6 +50,8 @@ func ajump(delta):
 		velocity.y += gravity * delta
 
 func flip():
+	
+	
 	if (is_facing_right and velocity.x < 0) or (not is_facing_right and velocity.x > 0):
 		scale.x *= -1
 		is_facing_right = not is_facing_right
@@ -63,11 +62,6 @@ func attack_1():
 		animated_sprite.play("attack_1")
 		velocity.x = 0
 
-func shoot():
-	var newblood1 = blood1.instantiate()
-	newblood1.direction=rotation
-	newblood1.global_position = $spawnarrow.global_position
-	get_parent().add_child(newblood1)
 
 func _on_animation_finished():
 	if animated_sprite.animation == "attack_1":
