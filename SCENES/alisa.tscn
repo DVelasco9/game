@@ -341,9 +341,6 @@ run_speed = 2.0
 sprite_frames = SubResource("SpriteFrames_ff082")
 animation = &"idle"
 
-[node name="spawnarrow" type="Node2D" parent="CharacterBody2D"]
-position = Vector2(28, 12)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2.25, 27)
 shape = SubResource("RectangleShape2D_88mih")
