@@ -17,7 +17,7 @@ func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
-	look_at(get_global_mouse_position())
+	look_at(get_angle_to())
 	if Input.is_action_just_pressed("ataque1"):
 		shoot()
 	attack_1()
