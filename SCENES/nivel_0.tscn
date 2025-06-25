@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://casbm6oa6c66v"]
+[gd_scene load_steps=5 format=4 uid="uid://cj4arqlul6mqe"]
 
 [ext_resource type="Texture2D" uid="uid://dyt1o4gxah0kj" path="res://castle_tileset_part1.png" id="1_ododp"]
 [ext_resource type="PackedScene" uid="uid://dyyefbhs15fso" path="res://SCENES/alisa.tscn" id="2_2xhyw"]
