@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $Sprite2D
 
+const arrblood1 = preload("res://SCENES/carga_sangre_1.tscn")
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_facing_right = true
@@ -17,6 +18,7 @@ func _ready():
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
+	disparo()
 	attack_1()
 	estado()
 	ajump(delta)
@@ -61,6 +63,15 @@ func attack_1():
 		ataque_1 = true
 		animated_sprite.play("attack_1")
 		velocity.x = 0
+
+func disparo():
+	var shoot = arrblood1.instantiate()
+	if Input.is_action_just_pressed("ataque1"):
+		get_parent().add_child(shoot)
+		shoot.position = .position
+		if not is_facing_right:
+			shoot.scale.x *= -1
+			shoot.arr1_speed *= -1
 
 
 func _on_animation_finished():

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://br12251l88cwy"]
+
+[ext_resource type="Script" uid="uid://bexee3prx1i5m" path="res://SCRIPTS/carga_sangre_1.gd" id="1_vs7xh"]
+[ext_resource type="Texture2D" uid="uid://cpi1na7h50p2l" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Blood_Charge_1.png" id="2_kv030"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30spo"]
+size = Vector2(26, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbx42"]
+atlas = ExtResource("2_kv030")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihc1u"]
+atlas = ExtResource("2_kv030")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk05s"]
+atlas = ExtResource("2_kv030")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wcee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbx42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihc1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk05s")
+}],
+"loop": true,
+"name": &"blood_arrow1",
+"speed": 5.0
+}]
+
+[node name="carga_sangre1" type="Area2D"]
+script = ExtResource("1_vs7xh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_30spo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 0)
+sprite_frames = SubResource("SpriteFrames_0wcee")
+animation = &"blood_arrow1"

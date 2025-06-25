@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://dyyefbhs15fso"]
 
-[ext_resource type="Script" uid="uid://cja2ua3ccgnnp" path="res://SCRIPTS/character_body_2d.gd" id="1_ocxlp"]
+[ext_resource type="Script" uid="uid://c18c0wjntqksq" path="res://SCRIPTS/alisa.gd" id="1_emqsm"]
 [ext_resource type="Texture2D" uid="uid://b43bab0t3r500" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Idle.png" id="2_errjh"]
 [ext_resource type="Texture2D" uid="uid://buil432df2pf8" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_1.png" id="2_o2hvu"]
 [ext_resource type="Texture2D" uid="uid://bl037x83xjefo" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Attack_3.png" id="2_r0c14"]
@@ -329,21 +329,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88mih"]
 size = Vector2(25.5, 68)
 
-[node name="alisa" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_ocxlp")
+[node name="alisa" type="CharacterBody2D"]
+script = ExtResource("1_emqsm")
 move_speed = 300.0
 jump = 400.0
 run_speed = 2.0
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -64)
 sprite_frames = SubResource("SpriteFrames_ff082")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2.25, 27)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.25, -37)
 shape = SubResource("RectangleShape2D_88mih")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -64)
 zoom = Vector2(2, 2)
