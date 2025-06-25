@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const wzombierun = 50
+const wzombierun = 500
 
 var gravity = 200
 
@@ -20,12 +20,12 @@ func gravedad(delta):
 func pared():
 	if is_on_wall():
 		if !$AnimatedSprite2D.flip_h:
-			velocity.x = wzombierun
-		else:
 			velocity.x = -wzombierun
+		else:
+			velocity.x = wzombierun
 		
-	if velocity.x < 0:
+	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
-	elif velocity.x > 0:
+	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 		
