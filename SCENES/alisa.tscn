@@ -332,7 +332,7 @@ size = Vector2(25.5, 68)
 [node name="alisa" type="CharacterBody2D"]
 script = ExtResource("1_emqsm")
 move_speed = 300.0
-jump = 400.0
+jump = 500.0
 run_speed = 2.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

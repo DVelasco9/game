@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $Sprite2D
 
+
+
 const arrblood1 = preload("res://SCENES/carga_sangre_1.tscn")
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -91,3 +93,7 @@ func update_animations():
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+
+
+func _on_reset_area_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()

@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlsipl7dfwth6"]
+
+[ext_resource type="Script" uid="uid://bemfl6f6k17dy" path="res://SCRIPTS/zombie_1.gd" id="1_dk5i7"]
+[ext_resource type="Texture2D" uid="uid://bl5hagqqh6kct" path="res://free-zombie-sprite-sheet-pack-pixel-art/Wild Zombie/Run.png" id="2_88kpf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqith"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(3, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w87vw"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(98, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ikgj"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(193, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88su3"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(288, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4miw5"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(383, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ebj"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(478, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7idq"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(573, 0, 95, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqegu"]
+atlas = ExtResource("2_88kpf")
+region = Rect2(668, 0, 95, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcyih"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqith")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w87vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ikgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88su3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4miw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1ebj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7idq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqegu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ml7s"]
+size = Vector2(11.2091, 6.95704)
+
+[node name="zombie1" type="CharacterBody2D"]
+script = ExtResource("1_dk5i7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jcyih")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5.44634, 24.5094)
+rotation = 0.611292
+scale = Vector2(1.46361, -6.5937)
+shape = SubResource("RectangleShape2D_5ml7s")
+
+[node name="rayo" type="Node2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="rayo1" type="RayCast2D" parent="rayo"]
+target_position = Vector2(60, 0)
+
+[node name="rayo2" type="RayCast2D" parent="rayo"]
+target_position = Vector2(-60, 0)
