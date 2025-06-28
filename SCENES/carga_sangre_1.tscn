@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://br12251l88cwy"]
+[gd_scene load_steps=9 format=3 uid="uid://br12251l88cwy"]
 
 [ext_resource type="Script" uid="uid://bexee3prx1i5m" path="res://SCRIPTS/carga_sangre_1.gd" id="1_vs7xh"]
 [ext_resource type="Texture2D" uid="uid://cpi1na7h50p2l" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Blood_Charge_1.png" id="2_kv030"]
+[ext_resource type="PackedScene" uid="uid://bitt0dxp8me0f" path="res://SCENES/hitbox.tscn" id="3_kv030"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30spo"]
 size = Vector2(26, 10)
@@ -46,3 +47,7 @@ shape = SubResource("RectangleShape2D_30spo")
 position = Vector2(9, 0)
 sprite_frames = SubResource("SpriteFrames_0wcee")
 animation = &"blood_arrow1"
+
+[node name="hitbox" parent="." instance=ExtResource("3_kv030")]
+collision_layer = 0
+collision_mask = 4

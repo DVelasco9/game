@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccux42wd860ru"]
+
+[ext_resource type="Script" uid="uid://cwfpp111pbv23" path="res://SCRIPTS/health_component.gd" id="1_pa5ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhwof"]
+size = Vector2(35, 75)
+
+[node name="HealthComponent" type="Area2D"]
+script = ExtResource("1_pa5ou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 27.5)
+shape = SubResource("RectangleShape2D_uhwof")
+debug_color = Color(6.73831e-07, 0.645196, 0.265294, 0.42)

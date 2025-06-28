@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlsipl7dfwth6"]
+[gd_scene load_steps=15 format=3 uid="uid://dlsipl7dfwth6"]
 
 [ext_resource type="Script" uid="uid://bemfl6f6k17dy" path="res://SCRIPTS/zombie_1.gd" id="1_dk5i7"]
 [ext_resource type="Texture2D" uid="uid://bl5hagqqh6kct" path="res://free-zombie-sprite-sheet-pack-pixel-art/Wild Zombie/Run.png" id="2_88kpf"]
+[ext_resource type="PackedScene" uid="uid://ccux42wd860ru" path="res://SCENES/health_component.tscn" id="3_wqith"]
+[ext_resource type="PackedScene" uid="uid://bitt0dxp8me0f" path="res://SCENES/hitbox.tscn" id="4_w87vw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqith"]
 atlas = ExtResource("2_88kpf")
@@ -87,6 +89,18 @@ position = Vector2(5.44634, 24.5094)
 rotation = 0.611292
 scale = Vector2(1.46361, -6.5937)
 shape = SubResource("RectangleShape2D_5ml7s")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_wqith")]
+position = Vector2(13, 10)
+rotation = 0.621473
+scale = Vector2(0.566719, 0.677499)
+collision_layer = 4
+collision_mask = 0
+
+[node name="hitbox" parent="." instance=ExtResource("4_w87vw")]
+position = Vector2(15, 27)
+collision_layer = 0
+collision_mask = 2
 
 [node name="rayo" type="Node2D" parent="."]
 position = Vector2(0, 20)
