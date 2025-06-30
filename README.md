@@ -16,3 +16,4 @@ TODAS LAS ESCENAS DEL JUEGO
 
 ## SCRIPTS 
 TODOS LOS CODIGOS DEL JUEGO
+[Ir a scripts](https://github.com/DVelasco9/game/tree/master/SCRIPTS)
