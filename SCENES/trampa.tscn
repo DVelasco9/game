@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://bygsnr5gl61h5"]
+[gd_scene load_steps=33 format=3 uid="uid://bygsnr5gl61h5"]
 
 [ext_resource type="Texture2D" uid="uid://c3xa4q5hyugbg" path="res://trampas2/Trap_Spike.png" id="1_wqae6"]
+[ext_resource type="PackedScene" uid="uid://bitt0dxp8me0f" path="res://SCENES/hitbox.tscn" id="2_wbsds"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbsds"]
 atlas = ExtResource("1_wqae6")
@@ -221,3 +222,7 @@ shape = SubResource("RectangleShape2D_wqae6")
 position = Vector2(-0.5, 37)
 shape = SubResource("RectangleShape2D_wbsds")
 debug_color = Color(0.799262, 0.0355186, 1, 0.42)
+
+[node name="hitbox" parent="." instance=ExtResource("2_wbsds")]
+position = Vector2(-1, 0)
+scale = Vector2(2.09168, 0.953156)
