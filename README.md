@@ -12,7 +12,7 @@ UPEN
 
 ## SCENES 
 TODAS LAS ESCENAS DEL JUEGO
-
+[Ir a escenas](https://github.com/DVelasco9/game/tree/master/SCENES)
 
 ## SCRIPTS 
 TODOS LOS CODIGOS DEL JUEGO
