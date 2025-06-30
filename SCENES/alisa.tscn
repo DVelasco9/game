@@ -339,7 +339,9 @@ run_speed = 2.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -64)
 sprite_frames = SubResource("SpriteFrames_ff082")
-animation = &"idle"
+animation = &"jump"
+frame = 1
+frame_progress = 0.00961019
 
 [node name="HealthComponent" parent="." instance=ExtResource("10_emqsm")]
 position = Vector2(-10, -65)
