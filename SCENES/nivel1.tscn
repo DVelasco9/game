@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bqjf1h1dfj3w0"]
+[gd_scene load_steps=16 format=4 uid="uid://bqjf1h1dfj3w0"]
 
 [ext_resource type="Texture2D" uid="uid://dk8fqp2f4pg1l" path="res://Tile set/Artboard2.png" id="1_d1slv"]
 [ext_resource type="Script" uid="uid://cuttcfrt752dg" path="res://SCRIPTS/nivel_1.gd" id="1_rraf3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8sel5j0bxqke" path="res://SCENES/plataforma.tscn" id="6_tp8mx"]
 [ext_resource type="PackedScene" uid="uid://dhpr3ud52nhsq" path="res://SCENES/reiniciar.tscn" id="7_skbw8"]
 [ext_resource type="PackedScene" uid="uid://c5eearygok6sr" path="res://SCENES/puas.tscn" id="8_o3ycp"]
+[ext_resource type="PackedScene" uid="uid://dlsipl7dfwth6" path="res://SCENES/zombie_1.tscn" id="9_x4yx7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h88md"]
 texture = ExtResource("1_d1slv")
@@ -5347,3 +5348,6 @@ scale = Vector2(1.15247, 3.00449)
 [node name="Area2D3" parent="." instance=ExtResource("8_o3ycp")]
 position = Vector2(530, -24)
 scale = Vector2(1.15247, 3.00449)
+
+[node name="zombie1" parent="." instance=ExtResource("9_x4yx7")]
+position = Vector2(570, -103)

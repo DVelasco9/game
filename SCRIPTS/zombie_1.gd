@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const wzombierun = 500
+const wzombierun = 300
 
 var gravity = 200
 
