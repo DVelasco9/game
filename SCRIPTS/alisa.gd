@@ -97,3 +97,4 @@ func update_animations():
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+		

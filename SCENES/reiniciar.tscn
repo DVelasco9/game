@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhpr3ud52nhsq"]
+
+[ext_resource type="Script" uid="uid://b7i807lfpbfoi" path="res://SCRIPTS/reiniciar.gd" id="1_7jpne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4pre"]
+
+[node name="reiniciar" type="Area2D"]
+script = ExtResource("1_7jpne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u4pre")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
