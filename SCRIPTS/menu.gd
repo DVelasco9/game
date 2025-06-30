@@ -9,7 +9,7 @@ func _ready() -> void:
 	audio_stream_player.play()
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://SCENES/nivel_0.tscn")
+	get_tree().change_scene_to_file("res://SCENES/select_ch.tscn")
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://SCENES/options.tscn")

@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm34wivebrpyi"]
+
+[ext_resource type="Texture2D" uid="uid://b43bab0t3r500" path="res://free-vampire-pixel-art-sprite-sheets/Countess_Vampire/Idle.png" id="1_573xn"]
+[ext_resource type="Script" uid="uid://c2qw1kyndhvwn" path="res://SCRIPTS/select_ch.gd" id="1_pi1sg"]
+[ext_resource type="PackedScene" uid="uid://dyyefbhs15fso" path="res://SCENES/alisa.tscn" id="2_b458l"]
+[ext_resource type="Script" uid="uid://bcoen5aocwxf6" path="res://SCRIPTS/CharacterData.gd" id="3_kq6vn"]
+[ext_resource type="Texture2D" uid="uid://bd755gupy5cw6" path="res://free-vampire-pixel-art-sprite-sheets/Converted_Vampire/Idle.png" id="4_lx48l"]
+[ext_resource type="PackedScene" uid="uid://bdicr2leinvay" path="res://SCENES/alfred.tscn" id="5_gcoa5"]
+
+[sub_resource type="Resource" id="Resource_b458l"]
+script = ExtResource("3_kq6vn")
+key = "condesa"
+imagen = ExtResource("1_573xn")
+Scene = ExtResource("2_b458l")
+metadata/_custom_type_script = "uid://bcoen5aocwxf6"
+
+[sub_resource type="Resource" id="Resource_gcoa5"]
+script = ExtResource("3_kq6vn")
+key = "convertido"
+imagen = ExtResource("4_lx48l")
+Scene = ExtResource("5_gcoa5")
+metadata/_custom_type_script = "uid://bcoen5aocwxf6"
+
+[node name="select ch" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pi1sg")
+personajes = Array[Resource]([SubResource("Resource_b458l"), SubResource("Resource_gcoa5")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0304376, 0.000984228, 3.76021e-10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 277)
+scale = Vector2(3, 3)
+hframes = 5
+
+[node name="anterior" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -33.0
+offset_right = -209.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "<"
+
+[node name="siguiente" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -36.0
+offset_right = 288.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[node name="SELECT" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.0
+offset_top = -145.0
+offset_right = 172.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "SELECCIONAR"
+
+[connection signal="pressed" from="anterior" to="." method="_on_anterior_pressed"]
+[connection signal="pressed" from="siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="pressed" from="SELECT" to="." method="_on_select_pressed"]
