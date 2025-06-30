@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cj4arqlul6mqe"]
+[gd_scene load_steps=11 format=4 uid="uid://cj4arqlul6mqe"]
 
 [ext_resource type="Script" uid="uid://tednckhaqjwo" path="res://SCRIPTS/nivel_0.gd" id="1_2xhyw"]
 [ext_resource type="Texture2D" uid="uid://dyt1o4gxah0kj" path="res://castle_tileset_part1.png" id="1_ododp"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cnmd2aff27tak" path="res://SCRIPTS/reset_area.gd" id="3_22o1a"]
 [ext_resource type="Script" uid="uid://d4nlj4ohxpd7p" path="res://SCRIPTS/next.gd" id="4_pd8x8"]
 [ext_resource type="Texture2D" uid="uid://dalygoxndqw5u" path="res://cpa_.png" id="5_82fav"]
-[ext_resource type="PackedScene" uid="uid://dlsipl7dfwth6" path="res://SCENES/zombie_1.tscn" id="7_nq8xa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xhyw"]
 texture = ExtResource("1_ododp")
@@ -1497,7 +1496,6 @@ position = Vector2(-303, -101)
 [node name="next" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("4_pd8x8")
-next_scene_path = "res://SCENES/nivel1.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="next"]
 position = Vector2(953, -33)
@@ -1513,18 +1511,6 @@ shape = SubResource("RectangleShape2D_nq8xa")
 
 [node name="alisa" parent="." instance=ExtResource("2_2xhyw")]
 position = Vector2(-304, -57)
-
-[node name="zombie1" parent="." instance=ExtResource("7_nq8xa")]
-position = Vector2(854, -58)
-
-[node name="zombie2" parent="." instance=ExtResource("7_nq8xa")]
-position = Vector2(763, -64)
-
-[node name="zombie3" parent="." instance=ExtResource("7_nq8xa")]
-position = Vector2(656, -75)
-
-[node name="zombie4" parent="." instance=ExtResource("7_nq8xa")]
-position = Vector2(908, -127)
 
 [connection signal="body_entered" from="Reset_area" to="." method="_on_reset_area_body_entered"]
 [connection signal="body_entered" from="next" to="next" method="_on_body_entered"]

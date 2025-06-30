@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name player
+
 @export var move_speed: float
 @export var jump: float
 @export var run_speed: float
@@ -17,8 +19,8 @@ var running = false
 var ataque_1 = false
 
 func _ready():
+	add_to_group("player")
 	animated_sprite.animation_finished.connect(_on_animation_finished)
-
 	
 
 func _physics_process(delta: float) -> void:
@@ -95,8 +97,3 @@ func update_animations():
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
-
-
-
-func _on_reset_area_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()

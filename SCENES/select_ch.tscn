@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pi1sg")
-personajes = Array[Resource]([SubResource("Resource_b458l"), SubResource("Resource_gcoa5")])
+personajes = Array[ExtResource("3_kq6vn")]([SubResource("Resource_b458l"), SubResource("Resource_gcoa5")])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
