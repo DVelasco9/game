@@ -1,14 +1,20 @@
-# GAME
-
-![chunli](https://github.com/user-attachments/assets/498dd678-1a93-4a53-b6a7-f9adfdac3784)
+# ZOMBIE ESCAPE
 
 
-JUEGO\
 DIEGO EDUARDO VELASCO BASULTO\
 CARLOS ANTONIO ANDRADE VALLES\
-I-TIID-2\
-CUATRIMESTRE 2\
-UPEN
+
+## Descripción del juego
+Plataformero con enemigos.
+El unico objetivo es salir del castillo evitando todas las trampas y matando todo lo que se te cruze en tu camino
+
+
+## Recursos usados
+
+## Descripción de las escenas
+
+## Descripción de los codigos
+
 
 ## SCENES 
 TODAS LAS ESCENAS DEL JUEGO
