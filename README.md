@@ -1,8 +1,8 @@
 # ZOMBIE ESCAPE
 
-
+### integrantes
 DIEGO EDUARDO VELASCO BASULTO\
-CARLOS ANTONIO ANDRADE VALLES\
+CARLOS ANTONIO ANDRADE VALLES
 
 ## Descripción del juego
 Plataformero con enemigos.\
@@ -14,11 +14,11 @@ El unico objetivo es salir del castillo evitando todas las trampas y matando tod
 
 
 ## Descripción de las escenas
-# Niveles
+### Niveles
 El primer nivel solo contiene zombies y una puerta de salida, el segundo nivel contiene un zombies y esta creado en un estilo más plataformero.
-# Plataformas 
+### Plataformas 
 Las plataformas utilizadas fueron las mismas que en proyectos anteriores con la diferencia que se agregó una nueva que provoca daño.
-# Personaje 
+### Personaje 
 dddd
 
 
