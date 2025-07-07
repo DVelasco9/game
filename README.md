@@ -369,6 +369,6 @@ TODOS LOS CODIGOS DEL JUEGO
 Por mi parte, las dificultades  fue que no sabia usar terminal y fue un problemon intentar subir commits, hacer merges o rebase, fue asi de complicado que tuve que borrar el primer proyecto porque estaba hecho un desastre y para rematar cierta persona casi me tumba el nuevo proyecto, en conclusión, vean tutoriales en youtube o preguntenle a alguien que si sabe @NIZ
 
 ### Carlos
-
+La principal dificultad que tuve al utilizar herramientas colaborativas fue al momento de hacer un commit para que mi compañero pudiera ver los cambios que yo había realizado en el proyecto. Durante este proceso ocurrió un fallo, lo que provocó que el juego dejara de funcionar correctamente.
 ## CONCLUSIÓN
 Es de suma importancia el saber usar estas herramientas colaborativas, puesto que te permitira trabajar de manera más eficiente y casi en tiempo real junto con tus compañeros, para no hacer el tipico "En la casa lo hacemos y en la escuela lo juntamos", ademas, muchas veces en al ambito laboral nos vamos a topar con problemas que requieran más de un colaborador y el hecho de no saber usar herramientas como github, o incluso más importante, herramientas como la terminal pues va a entorpecer el trabajo de la empresa e incluso puede provocar tu despido, ademas de un claro estancamiento en tu desarrollo profesional.
